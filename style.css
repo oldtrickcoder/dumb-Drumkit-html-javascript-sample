@@ -1,0 +1,44 @@
+*,
+::after,
+::before {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  min-height: 50px;
+  background: pink;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.drumPad {
+  background: rgb(11, 168, 32);
+  border-radius: 20px;
+  min-height: 200px;
+  box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.4);
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 700ms;
+}
+
+.drumPad:hover {
+  box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.05);
+
+  filter: brightness(1.3);
+}

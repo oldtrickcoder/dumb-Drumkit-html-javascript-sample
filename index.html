@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Java Script Drum Kit</title>
+  </head>
+  <body>
+    <audio src="" id="audiosource"></audio>
+    <marquee behavior="" direction="">
+      <h1>Javascript Drum Kit</h1>
+    </marquee>
+    <div class="container">
+      <div class="drumPad" id="Crash" onclick="CrashSound()">
+        Crash
+        <br />
+        A
+      </div>
+      <div class="drumPad" id="HighTom" onclick="HighTomSound()">
+        High Tom <br />
+        S
+      </div>
+      <div class="drumPad" id="Kick" onclick="Kick()">
+        Kick <br />
+        D
+      </div>
+      <div class="drumPad" id="LowTom" onclick="LowTom()">
+        Low Tom <br />
+        Z
+      </div>
+      <div class="drumPad" id="MidTom" onclick="OpenHat()">
+        mid Tom <br />
+        X
+      </div>
+      <div class="drumPad" id="Snare" onclick="Snare()">
+        Snare <br />
+        C
+      </div>
+      <div class="drumPad" id="CloseHat" onclick="CloseHat()">
+        Close hat <br />
+        V
+      </div>
+      <div class="drumPad" id="OpenHat" onclick="OpenHat()">
+        openHat <br />
+        F
+      </div>
+      <div class="drumPad" id="Sticks" onclick="Stick()">
+        Sticks <br />
+        Space
+      </div>
+    </div>
+    <script src="/functional.js"></script>
+  </body>
+</html>
