@@ -1,5 +1,15 @@
 // ./assets/sounds/Acoustic Crash 04.wav
-const audioSource = document.getElementById("audiosource");
+const audio1 = document.getElementById("audiosource");
+const audio2 = document.getElementById("audio2");
+const audio3 = document.getElementById("audio3");
+const audio4 = document.getElementById("audio4");
+const audio5 = document.getElementById("audio5");
+const audio6 = document.getElementById("audio6");
+const audio7 = document.getElementById("audio7");
+const audio8 = document.getElementById("audio8");
+const audio9 = document.getElementById("audio9");
+
+// JUST COMMENT IT
 const crash = document.getElementById("Crash");
 const HighT = document.getElementById("HighTom");
 const KickEl = document.getElementById("Kick");
@@ -12,63 +22,60 @@ const StickEl = document.getElementById("Sticks");
 
 function CrashSound() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Crash 04.wav");
+  audio1.setAttribute("src", "./assets/sounds/Acoustic Crash 04.wav");
   console.log("play crash Sound");
-  audioSource.play();
+  audio1.play();
 }
 function HighTomSound() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic High Tom 01.wav");
+  audio2.setAttribute("src", "./assets/sounds/Acoustic High Tom 01.wav");
   console.log("play High Tom Sound");
-  audioSource.play();
+  audio2.play();
 }
 function Kick() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Kick 01.wav");
+  audio3.setAttribute("src", "./assets/sounds/Acoustic Kick 01.wav");
   console.log("play Kick Sound");
-  audioSource.play();
+  audio3.play();
 }
 function LowTom() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Low Tom 01.wav");
+  audio4.setAttribute("src", "./assets/sounds/Acoustic Low Tom 01.wav");
   console.log("play Low Tom Sound");
-  audioSource.play();
+  audio4.play();
 }
 function MidTom() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Mid Tom 01.wav");
+  audio5.setAttribute("src", "./assets/sounds/Acoustic Mid Tom 01.wav");
   console.log("play Mid Tom Sound");
-  audioSource.play();
+  audio5.play();
 }
 function Snare() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Snare 01.wav");
+  audio6.setAttribute("src", "./assets/sounds/Acoustic Snare 01.wav");
   console.log("play Snare Sound");
-  audioSource.play();
+  audio6.play();
 }
 function Stick() {
   console.log("set sound");
-  audioSource.setAttribute("src", "./assets/sounds/Acoustic Sticks 01.wav");
+  audio7.setAttribute("src", "./assets/sounds/Acoustic Sticks 01.wav");
   console.log("play Stick Sound");
-  audioSource.play();
+  audio7.play();
 }
 function CloseHat() {
   console.log("set sound");
-  audioSource.setAttribute(
+  audio8.setAttribute(
     "src",
     "./assets/sounds/hihat-Acoustic Closed Hat 01.wav"
   );
   console.log("play Close Hat Sound");
-  audioSource.play();
+  audio8.play();
 }
 function OpenHat() {
   console.log("set sound");
-  audioSource.setAttribute(
-    "src",
-    "./assets/sounds/hihat-Acoustic Open Hat 01.wav"
-  );
+  audio9.setAttribute("src", "./assets/sounds/hihat-Acoustic Open Hat 01.wav");
   console.log("play Open Hat Sound");
-  audioSource.play();
+  audio9.play();
 }
 function normalize(el) {
   el.style.filter = "brightness(1 )";
