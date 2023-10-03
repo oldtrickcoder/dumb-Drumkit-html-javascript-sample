@@ -4,18 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
     <title>Java Script Drum Kit</title>
   </head>
   <body>
-    <audio src="" id="audiosource"></audio>
-    <audio src="" id="audio2"></audio>
-    <audio src="" id="audio3"></audio>
-    <audio src="" id="audio4"></audio>
-    <audio src="" id="audio5"></audio>
-    <audio src="" id="audio6"></audio>
-    <audio src="" id="audio7"></audio>
-    <audio src="" id="audio8"></audio>
-    <audio src="" id="audio9"></audio>
+    <div class="loading" id="loading">
+      <h3>Second Chance</h3>
+      <h2>Drum Kit</h2>
+      <p id="loading-text">Loading Audio & Media ....</p>
+      <h4 id="loading-explain">Document Media Successffully loaded</h4>
+    </div>
+    <audio src="./assets/sounds/Acoustic Crash 04.wav" id="audiosource"></audio>
+    <audio src="./assets/sounds/Acoustic High Tom 01.wav" id="audio2"></audio>
+    <audio src="./assets/sounds/Acoustic Kick 01.wav" id="audio3"></audio>
+    <audio src="./assets/sounds/Acoustic Low Tom 01.wav" id="audio4"></audio>
+    <audio src="./assets/sounds/Acoustic Mid Tom 01.wav" id="audio5"></audio>
+    <audio src="./assets/sounds/Acoustic Snare 01.wav" id="audio6"></audio>
+    <audio src="./assets/sounds/Acoustic Sticks 01.wav" id="audio7"></audio>
+    <audio
+      src="./assets/sounds/hihat-Acoustic Closed Hat 01.wav"
+      id="audio8"
+    ></audio>
+    <audio
+      src="./assets/sounds/hihat-Acoustic Open Hat 01.wav"
+      id="audio9"
+    ></audio>
     <marquee behavior="" direction="">
       <h1 style="color: white; margin-top: 30px">Online Drum Kit</h1>
     </marquee>
@@ -38,7 +56,7 @@
         Low Tom <br />
         Z
       </div>
-      <div class="drumPad" id="MidTom" onclick="OpenHat()">
+      <div class="drumPad" id="MidTom" onclick="MidTom()">
         mid Tom <br />
         X
       </div>
@@ -60,7 +78,11 @@
       </div>
     </div>
     <div class="container-footer">
-      <p><b> Second Chance: </b> ogi, yoda, sani ,agung angprof, ramdhan,uwi</p>
+      <p>
+        <b> Second Chance: </b>
+        <br />
+        ogi, yoda, sani ,agung angprof, ramdhan,uwi
+      </p>
     </div>
 
     <script src="/functional.js"></script>

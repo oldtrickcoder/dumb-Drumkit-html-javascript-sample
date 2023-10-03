@@ -4,19 +4,45 @@
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
-@font-face {
-  font-family: Poppins;
-  src: url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,600;1,300&display=swap");
-}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   background: url(./assets/images/josh-sorenson-MjIMc6uhwrE-unsplash.jpg)
     no-repeat;
   background-size: cover;
+}
+#loading-explain {
+  color: green;
+  display: none;
+}
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  z-index: 100;
+}
+
+#loading-text {
+  animation: Blink infinite 0.5s ease-in;
+  transition: 300ms;
+}
+@keyframes Blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .container-footer {
   background-color: rgb(211, 211, 211);
