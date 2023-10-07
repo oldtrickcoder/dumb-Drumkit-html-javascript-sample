@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,172 +13,169 @@
     <title>Java Script Drum Kit</title>
   </head>
   <body>
-    <style>
-      *,
-      ::after,
-      ::before {
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: "Poppins", sans-serif;
-        background: url(./assets/images/josh-sorenson-MjIMc6uhwrE-unsplash.jpg)
-          no-repeat;
-        background-size: cover;
-      }
-      #loading-explain {
-        color: green;
-        display: none;
-      }
-      .loading {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: white;
-        z-index: 100;
-      }
-
-      #loading-text {
-        animation: Blink infinite 0.5s ease-in;
-        transition: 300ms;
-      }
-      @keyframes Blink {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      .container-footer {
-        background-color: rgb(211, 211, 211);
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .container {
-        width: 90%;
-        min-height: 50px;
-        background: rgba(241, 241, 241, 0.3);
-        padding: 3rem;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 1rem;
-        row-gap: 1rem;
-      }
-
-      .drumPad {
-        background: rgb(11, 168, 32);
-        border-radius: 20px;
-        min-height: 200px;
-        box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.4);
-        cursor: pointer;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: 700ms;
-      }
-
-      .drumPad:hover {
-        box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.05);
-
-        filter: brightness(1.3);
-      }
-
-      @media screen and (max-width: 700px) {
-        .container {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .drumPad {
-          background: rgb(11, 168, 32);
-          border-radius: 20px;
-          min-height: 140px;
-          box-shadow: 10px 10px 10px rgba(20, 20, 20, 0.4);
-          cursor: pointer;
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          transition: 700ms;
-        }
-      }
-    </style>
     <div class="loading" id="loading">
       <h3>Second Chance</h3>
       <h2>Drum Kit</h2>
       <p id="loading-text">Loading Audio & Media ....</p>
       <h4 id="loading-explain">Document Media Successffully loaded</h4>
     </div>
-    <audio src="./assets/sounds/Acoustic Crash 04.wav" id="audiosource"></audio>
-    <audio src="./assets/sounds/Acoustic High Tom 01.wav" id="audio2"></audio>
-    <audio src="./assets/sounds/Acoustic Kick 01.wav" id="audio3"></audio>
-    <audio src="./assets/sounds/Acoustic Low Tom 01.wav" id="audio4"></audio>
-    <audio src="./assets/sounds/Acoustic Mid Tom 01.wav" id="audio5"></audio>
-    <audio src="./assets/sounds/Acoustic Snare 01.wav" id="audio6"></audio>
-    <audio src="./assets/sounds/Acoustic Sticks 01.wav" id="audio7"></audio>
     <audio
-      src="./assets/sounds/hihat-Acoustic Closed Hat 01.wav"
+      src="./assets/sounds/Acoustic Crash 04.wav"
+      id="audiosource"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic High Tom 01.wav"
+      id="audio2"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Kick 01.wav"
+      id="audio3"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Low Tom 01.wav"
+      id="audio4"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Mid Tom 01.wav"
+      id="audio5"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Snare 01.wav"
+      id="audio6"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Sticks 01.wav"
+      id="audio7"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Closed Hat 09.wav"
       id="audio8"
+      preloads
     ></audio>
     <audio
       src="./assets/sounds/hihat-Acoustic Open Hat 01.wav"
       id="audio9"
+      preload
+    ></audio>
+    <audio
+      src="./assets/sounds/Acoustic Hat Bell 01.wav"
+      id="audio10"
+      preload
     ></audio>
     <marquee behavior="" direction="">
       <h1 style="color: white; margin-top: 30px">Online Drum Kit</h1>
     </marquee>
 
     <div class="container">
-      <div class="drumPad" id="Crash" onclick="CrashSound()">
+      <div
+        class="drumPad"
+        id="Crash"
+        onclick='PlayingComponents(audio1, crash, "./assets/sounds/Acoustic Crash 04.wav");'
+      >
         Crash
         <br />
         A
       </div>
-      <div class="drumPad" id="HighTom" onclick="HighTomSound()">
+      <div
+        class="drumPad"
+        id="HighTom"
+        onclick='PlayingComponents(
+        audio2,
+        HighT,
+        "./assets/sounds/Acoustic High Tom 01.wav"
+      );'
+      >
         High Tom <br />
         S
       </div>
-      <div class="drumPad" id="Kick" onclick="Kick()">
+      <div
+        class="drumPad"
+        id="Kick"
+        onclick='    PlayingComponents(audio3, KickEl, "./assets/sounds/Acoustic Kick 01.wav");'
+      >
         Kick <br />
         D
       </div>
-      <div class="drumPad" id="LowTom" onclick="LowTom()">
+      <div
+        class="drumPad"
+        id="LowTom"
+        onclick='    PlayingComponents(audio4, LTom, "./assets/sounds/Acoustic Low Tom 01.wav");'
+      >
         Low Tom <br />
         Z
       </div>
-      <div class="drumPad" id="MidTom" onclick="MidTom()">
+      <div
+        class="drumPad"
+        id="MidTom"
+        onclick='    PlayingComponents(audio5, MTom, "./assets/sounds/Acoustic Mid Tom 01.wav");'
+      >
         mid Tom <br />
         X
       </div>
-      <div class="drumPad" id="Snare" onclick="Snare()">
+      <div
+        class="drumPad"
+        id="Snare"
+        onclick='    PlayingComponents(
+          audio6,
+          SnareEl,
+          "./assets/sounds/Acoustic Snare 01.wav "
+        );'
+      >
         Snare <br />
         C
       </div>
-      <div class="drumPad" id="CloseHat" onclick="CloseHat()">
+      <div
+        class="drumPad"
+        id="CloseHat"
+        onclick='PlayingComponents(
+        audio8,
+        CloseHatEl,
+        "./assets/sounds/Acoustic Closed Hat 09.wav"
+      );'
+      >
         Close hat <br />
         V
       </div>
-      <div class="drumPad" id="OpenHat" onclick="OpenHat()">
+      <div
+        class="drumPad"
+        id="OpenHat"
+        onclick='PlayingComponents(
+        audio9,
+        OpenHatEl,
+        "./assets/sounds/hihat-Acoustic Open Hat 01.wav"
+      );'
+      >
         openHat <br />
         F
       </div>
-      <div class="drumPad" id="Sticks" onclick="Stick()">
+      <div
+        class="drumPad"
+        id="HatBell"
+        onclick='PlayingComponents(
+        audio8,
+        CloseHatEl,
+        "./assets/sounds/Acoustic Closed Hat 09.wav"
+      );'
+      >
+        HatBell <br />
+        G
+      </div>
+      <div
+        class="drumPad"
+        id="Sticks"
+        onclick='    PlayingComponents(
+          audio10,
+          HatBell,
+          "./assets/sounds/Acoustic Hat Bell 01.wav"
+        );'
+      >
         Sticks <br />
         Space
       </div>
@@ -191,173 +188,6 @@
       </p>
     </div>
 
-    <script>
-      // ./assets/sounds/Acoustic Crash 04.wav
-      const audio1 = document.getElementById("audiosource");
-      const audio2 = document.getElementById("audio2");
-      const audio3 = document.getElementById("audio3");
-      const audio4 = document.getElementById("audio4");
-      const audio5 = document.getElementById("audio5");
-      const audio6 = document.getElementById("audio6");
-      const audio7 = document.getElementById("audio7");
-      const audio8 = document.getElementById("audio8");
-      const audio9 = document.getElementById("audio9");
-
-      // JUST COMMENT IT
-      const crash = document.getElementById("Crash");
-      const HighT = document.getElementById("HighTom");
-      const KickEl = document.getElementById("Kick");
-      const LTom = document.getElementById("LowTom");
-      const MTom = document.getElementById("MidTom");
-      const SnareEl = document.getElementById("Snare");
-      const CloseHatEl = document.getElementById("CloseHat");
-      const OpenHatEl = document.getElementById("OpenHat");
-      const StickEl = document.getElementById("Sticks");
-
-      function CrashSound() {
-        audio1.pause();
-        audio1.setAttribute("src", "");
-        audio1.setAttribute("src", "./assets/sounds/Acoustic Crash 04.wav");
-        audio1.play();
-        crash.style.filter = "brightness(1.3)";
-        crash.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(crash);
-        }, 200);
-      }
-      function HighTomSound() {
-        audio2.setAttribute("src", "");
-        audio2.setAttribute("src", "./assets/sounds/Acoustic High Tom 01.wav");
-        audio2.play();
-        HighT.style.filter = "brightness(1.3)";
-        HighT.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(HighT);
-        }, 500);
-      }
-      function Kick() {
-        audio3.setAttribute("src", "");
-        audio3.setAttribute("src", "./assets/sounds/Acoustic Kick 01.wav");
-        audio3.play();
-        KickEl.style.filter = "brightness(1.3)";
-        KickEl.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(KickEl);
-        }, 500);
-      }
-      function LowTom() {
-        audio4.setAttribute("src", "");
-        audio4.setAttribute("src", "./assets/sounds/Acoustic Low Tom 01.wav");
-        audio4.play();
-        LTom.style.filter = "brightness(1.3)";
-        LTom.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(LTom);
-        }, 500);
-      }
-      function MidTom() {
-        audio5.setAttribute("src", "");
-        audio5.setAttribute("src", "./assets/sounds/Acoustic Mid Tom 01.wav");
-        audio5.play();
-        MTom.style.filter = "brightness(1.3)";
-        MTom.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(MTom);
-        }, 500);
-      }
-      function Snare() {
-        audio6.setAttribute("src", "");
-        audio6.setAttribute("src", "./assets/sounds/Acoustic Snare 01.wav");
-        audio6.play();
-        SnareEl.style.filter = "brightness(1.3)";
-        SnareEl.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(SnareEl);
-        }, 500);
-      }
-      function Stick() {
-        audio7.setAttribute("src", "");
-        audio7.setAttribute("src", "./assets/sounds/Acoustic Sticks 01.wav");
-        audio7.play();
-        StickEl.style.filter = "brightness(1.3)";
-        StickEl.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(StickEl);
-        }, 500);
-      }
-      function CloseHat() {
-        audio8.setAttribute("src", "");
-        audio8.setAttribute(
-          "src",
-          "./assets/sounds/hihat-Acoustic Closed Hat 01.wav"
-        );
-        audio8.play();
-        CloseHatEl.style.filter = "brightness(1.3)";
-        CloseHatEl.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(CloseHatEl);
-        }, 500);
-      }
-      function OpenHat() {
-        audio9.setAttribute("src", "");
-        audio9.setAttribute(
-          "src",
-          "./assets/sounds/hihat-Acoustic Open Hat 01.wav"
-        );
-        audio9.play();
-        OpenHatEl.style.filter = "brightness(1.3)";
-        OpenHatEl.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.05)";
-        setTimeout(() => {
-          normalize(OpenHatEl);
-        }, 500);
-      }
-      function normalize(el) {
-        el.style.filter = "brightness(1 )";
-        el.style.boxShadow = "10px 10px 10px rgba(20, 20, 20, 0.4)";
-      }
-      document.body.addEventListener("keydown", function (e) {
-        console.log(e.keyCode);
-
-        if (e.keyCode == 32) {
-          console.log("its a space bar");
-          Stick();
-        }
-        if (e.keyCode == 65) {
-          CrashSound();
-        }
-        if (e.keyCode == 83) {
-          HighTomSound();
-        }
-        if (e.keyCode == 90) {
-          LowTom();
-        }
-        if (e.keyCode == 88) {
-          MidTom();
-        }
-        if (e.keyCode == 67) {
-          Snare();
-        }
-        if (e.keyCode == 70) {
-          OpenHat();
-        }
-
-        if (e.keyCode == 86) {
-          CloseHat();
-        }
-        if (e.keyCode == 68) {
-          Kick();
-        }
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM IN loaded");
-        setTimeout(() => {
-          document.getElementById("loading-explain").style.display = "block";
-        }, 3000);
-        setTimeout(() => {
-          document.getElementById("loading").style.display = "none";
-        }, 5000);
-      });
-    </script>
+    <script src="/functional.js"></script>
   </body>
 </html>
